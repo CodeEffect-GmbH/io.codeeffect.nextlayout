@@ -1,8 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import Section from "./section";
 import MaxWidthContainer from "./max-width-container";
-import Title from "./title";
-import Paragraph from "./paragraph";
+import SectionHeader from "./section-header";
 
 export interface BasicSectionProps {
     title: string;
@@ -18,12 +17,7 @@ const BasicSection: FunctionComponent<PropsWithChildren<BasicSectionProps>> = ({
         <Section>
             <MaxWidthContainer>
                 <div className='flex flex-col'>
-                    <div className="text-center mb-2 md:mb-4">
-                        <Title level={5} uppercase compact>{overTitle}</Title>
-                    </div>
-                    <div className="text-center">
-                        <Title level={2}>{title}</Title>
-                    </div>
+                    <SectionHeader title={title} overTitle={overTitle} align='center' />
                     <div>{children}</div>
                 </div>
             </MaxWidthContainer>

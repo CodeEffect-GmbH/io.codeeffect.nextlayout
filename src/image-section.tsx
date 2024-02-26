@@ -3,6 +3,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import Title from "./title";
 import MaxWidthContainer from "./max-width-container";
 import Section from "./section";
+import SectionHeader from "./section-header";
 
 export interface ImageSectionProps {
     imageUrl: string;
@@ -42,10 +43,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="mb-2 md:mb-4">
-                            <Title level={5} uppercase compact>{overTitle}</Title>
-                        </div>
-                        <Title level={2}>{title}</Title>
+                        <SectionHeader title={title} overTitle={overTitle} />
                         <div>{children}</div>
                     </div>
                 </div>

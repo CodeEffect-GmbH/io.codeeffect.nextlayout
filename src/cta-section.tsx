@@ -3,33 +3,31 @@ import Section from "./section";
 import MaxWidthContainer from "./max-width-container";
 import Title from "./title";
 import Paragraph from "./paragraph";
+import SectionHeader from "./section-header";
 
 export interface CTASectionProps {
     title: string;
     overTitle: string;
     description: string;
+    className?: string;
 }
 
 const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
     title,
     overTitle,
     description,
+    className,
     children
 }) => {
     return (
-        <Section className="pb-24 md:pb-48 bg-slate-300">
+        <Section className={`pb-24 md:pb-48 ${className ? className : ''}`}>
             <MaxWidthContainer>
-                <div className='max-w-screen-lg flex flex-col items-center'>
-                    <div className="mb-2 md:mb-4">
-                        <Title level={5} uppercase compact>{overTitle}</Title>
-                    </div>
+                <div className='flex flex-col items-center'>
+                    <SectionHeader title={title} overTitle={overTitle} align='center' />
                     <div className="text-center">
-                        <Title level={2}>{title}</Title>
+                        <Paragraph compact>{description}</Paragraph>
                     </div>
-                    <div className="text-center">
-                        <Paragraph>{description}</Paragraph>
-                    </div>
-                    <div>{children}</div>
+                    {children && <div className="mt-8 md:mt-12">{children}</div>}
                 </div>
             </MaxWidthContainer>
         </Section>
