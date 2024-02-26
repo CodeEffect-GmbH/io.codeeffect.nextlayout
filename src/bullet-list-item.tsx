@@ -18,7 +18,7 @@ const BulletListItem: FunctionComponent<PropsWithChildren<BulletListItemProps>> 
                 <div className="mr-2 md:mr-4">
                     {bullet}
                 </div>}
-            <div>
+            <div className="md:text-justify">
                 {title && <Title level={5} compact>{title}</Title>}
                 <Paragraph compact>{children}</Paragraph>
             </div>
