@@ -17,8 +17,8 @@ const BasicSection: FunctionComponent<PropsWithChildren<BasicSectionProps>> = ({
     return (
         <Section>
             <MaxWidthContainer>
-                <div className='max-w-screen-lg flex flex-col items-center'>
-                    <div className="mb-2 md:mb-4">
+                <div className='flex flex-col'>
+                    <div className="text-center mb-2 md:mb-4">
                         <Title level={5} uppercase compact>{overTitle}</Title>
                     </div>
                     <div className="text-center">

@@ -25,13 +25,16 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                     <div className="flex-1 relative self-stretch flex items-center justify-center">
                         <div className="relative w-4/5 h-4/5 mb-8 md:mb-0">
                             <div className="hidden md:block">
-                                <Image src={imageUrl} alt={title} fill />
+                                <Image src={imageUrl} alt={title} fill style={{
+                                    objectFit: 'contain'
+                                }} />
                             </div>
                             <div className="block md:hidden">
                                 <Image src={imageUrl} alt={title}
                                     style={{
                                         width: '100%',
                                         height: 'auto',
+                                        objectFit: 'contain'
                                     }}
                                     width={1}
                                     height={1} />
