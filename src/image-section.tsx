@@ -1,14 +1,12 @@
 import Image from "next/image";
 import { FunctionComponent, PropsWithChildren } from "react";
-import Title from "./title";
 import MaxWidthContainer from "./max-width-container";
 import Section from "./section";
 import SectionHeader from "./section-header";
+import { SectionProps } from "./components.model";
 
-export interface ImageSectionProps {
+export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
-    title: string;
-    overTitle: string;
     reversed?: boolean;
 }
 
@@ -16,7 +14,9 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     imageUrl,
     title,
     overTitle,
+    overTitleClassName,
     reversed = false,
+    overTitleIcon,
     children
 }) => {
     return (
@@ -43,7 +43,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                         </div>
                     </div>
                     <div className="flex-1">
-                        <SectionHeader title={title} overTitle={overTitle} />
+                        <SectionHeader title={title} overTitle={overTitle} overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
                         <div>{children}</div>
                     </div>
                 </div>

@@ -1,13 +1,11 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import Section from "./section";
 import MaxWidthContainer from "./max-width-container";
-import Title from "./title";
 import Paragraph from "./paragraph";
 import SectionHeader from "./section-header";
+import { SectionProps } from "./components.model";
 
-export interface CTASectionProps {
-    title: string;
-    overTitle: string;
+export interface CTASectionProps extends SectionProps {
     description: string;
     className?: string;
 }
@@ -15,6 +13,8 @@ export interface CTASectionProps {
 const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
     title,
     overTitle,
+    overTitleClassName,
+    overTitleIcon,
     description,
     className,
     children
@@ -23,7 +23,7 @@ const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
         <Section className={`pb-24 md:pb-48 ${className ? className : ''}`}>
             <MaxWidthContainer>
                 <div className='flex flex-col items-center'>
-                    <SectionHeader title={title} overTitle={overTitle} align='center' />
+                    <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
                     <div className="text-center">
                         <Paragraph compact>{description}</Paragraph>
                     </div>

@@ -1,10 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
+import { ClassNameProps } from "./components.model";
 
-export interface SectionProps {
-    className?: string;
-}
-
-const Section: FunctionComponent<PropsWithChildren<SectionProps>> = ({
+const Section: FunctionComponent<PropsWithChildren<ClassNameProps>> = ({
     className,
     children
 }) => {
