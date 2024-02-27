@@ -18,7 +18,7 @@ export interface JobPostingListItemProps {
 
 const JobPostingListItem: FunctionComponent<JobPostingListItemProps> = (props) => {
     const apply = () => {
-        window.open(props.applyLink, '_blank');
+        window.open(props.applyLink, '_self');
     };
 
     return (

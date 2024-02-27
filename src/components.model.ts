@@ -10,3 +10,7 @@ export interface SectionProps {
     overTitleClassName?: string;
     overTitleIcon?: ReactNode;
 }
+
+export interface FooterGroupProps {
+    title?: string;
+}
