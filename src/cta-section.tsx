@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import Section from "./section";
 import MaxWidthContainer from "./max-width-container";
-import Paragraph from "./paragraph";
+import Text from "./text";
 import SectionHeader from "./section-header";
 import { SectionProps } from "./components.model";
 
@@ -25,7 +25,7 @@ const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
                 <div className='flex flex-col items-center'>
                     <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
                     <div className="text-center">
-                        <Paragraph compact>{description}</Paragraph>
+                        <Text compact>{description}</Text>
                     </div>
                     {children && <div className="mt-8 md:mt-12">{children}</div>}
                 </div>

@@ -1,11 +1,12 @@
 import { FunctionComponent, PropsWithChildren } from "react";
+import Text from "./text";
 
 const CopyrightNotice: FunctionComponent<PropsWithChildren> = ({
     children
 }) => {
     return (
         <div>
-            <span>&copy; {new Date().getFullYear()} {children}</span>
+            <Text level={2} compact>&copy; {new Date().getFullYear()} {children}</Text>
         </div>
     );
 }

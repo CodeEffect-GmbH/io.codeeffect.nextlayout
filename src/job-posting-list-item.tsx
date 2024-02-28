@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactNode } from "react";
 import Title from "./title";
-import Paragraph from "./paragraph";
+import Text from "./text";
 import Button from "./button";
 
 export interface JobPostingListItemProps {
@@ -28,7 +28,7 @@ const JobPostingListItem: FunctionComponent<JobPostingListItemProps> = (props) =
             </div>}
             <div className="flex-1">
                 <Title level={5} compact>{props.position}</Title>
-                <Paragraph compact>{props.description}</Paragraph>
+                <Text compact>{props.description}</Text>
             </div>
             <div className="flex justify-center items-center mt-4 md:mt-0 md:ml-8">
                 <Button className={props.buttonClassName} icon={props.buttonIcon} onClick={apply}>{props.applyLinkText}</Button>
