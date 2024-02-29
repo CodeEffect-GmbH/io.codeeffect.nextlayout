@@ -1,30 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
 import { FunctionComponent, PropsWithChildren } from "react";
+import { ClassNameProps } from "./components.model";
 
-export interface NavBarProps {
-    logoLink?: string;
-    logoLinkTitle: string;
-}
-
-const NavBar: FunctionComponent<PropsWithChildren<NavBarProps>> = ({
-    logoLink = '/',
-    logoLinkTitle,
+const NavBar: FunctionComponent<PropsWithChildren<ClassNameProps>> = ({
+    className,
     children
 }) => {
     return (
-        <div className='h-20 w-full flex justify-between px-4 md:px-8'>
-            <div className="relative h-full flex items-center">
-                <Link href={logoLink} title={logoLinkTitle}>
-                    <Image src='/mock/logoipsum-330.svg' alt="Logoipsum" style={{
-                        width: 'auto',
-                        height: '38px'
-                    }} width={1} height={1} />
-                </Link>
-            </div>
-            <div className="grow">
-                {children}
-            </div>
+        <div className={`h-full flex gap-8 ${className}`}>
+            {children}
         </div>
     );
 }
