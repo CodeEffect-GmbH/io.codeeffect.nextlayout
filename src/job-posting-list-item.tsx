@@ -6,7 +6,6 @@ import Text from "./text";
 import Button from "./button";
 
 export interface JobPostingListItemProps {
-    id: string;
     position: string;
     description: string;
     applyLinkText: string;

@@ -6,7 +6,7 @@ import SectionHeader from "./section-header";
 import { SectionProps } from "./components.model";
 
 export interface CTASectionProps extends SectionProps {
-    description: string;
+    description?: string;
     className?: string;
 }
 
@@ -24,9 +24,10 @@ const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
             <MaxWidthContainer>
                 <div className='flex flex-col items-center'>
                     <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
-                    <div className="text-center">
-                        <Text compact>{description}</Text>
-                    </div>
+                    {description &&
+                        <div className="text-center">
+                            <Text compact>{description}</Text>
+                        </div>}
                     {children && <div className="mt-8 md:mt-12">{children}</div>}
                 </div>
             </MaxWidthContainer>

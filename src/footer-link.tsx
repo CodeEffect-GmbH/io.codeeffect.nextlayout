@@ -1,8 +1,8 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import Text from "./text";
-import Link from "next/link";
+import LinkEx from "./link-ex";
+import { ClassNameProps } from "./components.model";
 
-export interface FooterLinkProps {
+export interface FooterLinkProps extends ClassNameProps {
     title: string;
     href: string;
     external?: boolean;
@@ -12,14 +12,10 @@ const FooterLink: FunctionComponent<PropsWithChildren<FooterLinkProps>> = ({
     title,
     href,
     external = false,
+    className,
     children
 }) => {
-    return (
-        <div className='flex flex-col gap-8'>
-            {external && <a href={href} title={title}><Text compact>{children}</Text></a>}
-            {!external && <Link href={href} title={title}><Text level={2} compact>{children}</Text></Link>}
-        </div>
-    );
+    return (<LinkEx className={className} level={2} external={external} href={href} title={title}>{children}</LinkEx>);
 }
 
 export default FooterLink;
