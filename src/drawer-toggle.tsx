@@ -3,16 +3,18 @@
 import { FunctionComponent } from "react";
 import Button from "./button";
 import DrawerIcon from "./drawer-icon";
+import { ClassNameProps } from "./components.model";
 
-export interface DrawerToggleProps {
+export interface DrawerToggleProps extends ClassNameProps {
     onToggle?: () => void;
 }
 
 const DrawerToggle: FunctionComponent<DrawerToggleProps> = ({
-    onToggle = () => { }
+    onToggle = () => { },
+    className
 }) => {
     return (
-        <Button icon={<DrawerIcon />} onClick={onToggle} />
+        <Button className={className} icon={<DrawerIcon />} onClick={onToggle} />
     );
 }
 

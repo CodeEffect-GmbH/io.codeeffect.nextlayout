@@ -2,7 +2,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import Section from "./section";
 import MaxWidthContainer from "./max-width-container";
 import SectionHeader from "./section-header";
-import { SectionProps } from "./components.model";
+import { SectionProps } from "../components.model";
 
 const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     title,

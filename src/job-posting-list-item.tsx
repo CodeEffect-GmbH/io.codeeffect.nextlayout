@@ -4,8 +4,9 @@ import { FunctionComponent, ReactNode } from "react";
 import Title from "./title";
 import Text from "./text";
 import Button from "./button";
+import { ClassNameProps } from "./components.model";
 
-export interface JobPostingListItemProps {
+export interface JobPostingListItemProps extends ClassNameProps {
     position: string;
     description: string;
     applyLinkText: string;
@@ -21,7 +22,7 @@ const JobPostingListItem: FunctionComponent<JobPostingListItemProps> = (props) =
     };
 
     return (
-        <div className='flex flex-col md:flex-row bg-gray-100 rounded-lg p-4 md:p-8'>
+        <div className={`flex flex-col md:flex-row rounded-lg p-4 md:p-8 ${props.className ? props.className : 'bg-gray-100'}`}>
             {props.icon && <div className="flex justify-center items-center mb-4 md:mb-0 md:mr-8">
                 {props.icon}
             </div>}

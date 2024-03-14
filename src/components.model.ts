@@ -11,10 +11,6 @@ export interface SectionProps {
     overTitleIcon?: ReactNode;
 }
 
-export interface FooterGroupProps {
-    title?: string;
-}
-
 export interface TextProps extends ClassNameProps {
     level?: number;
     compact?: boolean;

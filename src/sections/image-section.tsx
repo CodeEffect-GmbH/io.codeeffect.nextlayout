@@ -3,7 +3,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import MaxWidthContainer from "./max-width-container";
 import Section from "./section";
 import SectionHeader from "./section-header";
-import { SectionProps } from "./components.model";
+import { SectionProps } from "../components.model";
 
 export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
@@ -30,15 +30,11 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                                     objectFit: 'contain'
                                 }} />
                             </div>
-                            <div className="block md:hidden">
-                                <Image src={imageUrl} alt={title}
+                            <div className="block h-64 md:hidden">
+                                <Image src={imageUrl} alt={title} fill
                                     style={{
-                                        width: '100%',
-                                        height: 'auto',
                                         objectFit: 'contain'
-                                    }}
-                                    width={1}
-                                    height={1} />
+                                    }} />
                             </div>
                         </div>
                     </div>

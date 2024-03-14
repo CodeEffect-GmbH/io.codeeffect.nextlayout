@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from "react";
-import Title from "./title";
+import Title from "../title";
 
 export interface SectionHeaderProps {
     title: string;
@@ -23,7 +23,7 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
         <div>
             <div className={`flex mb-2 md:mb-4 ${alignClassFlex} ${overTitleClassName}`}>
                 {overTitleIcon && <div className="mr-2">{overTitleIcon}</div>}
-                <Title level={5} uppercase compact>{overTitle}</Title>
+                <Title className="text-pretty" level={5} uppercase compact>{overTitle}</Title>
             </div>
             <div className={alignClass}>
                 <Title level={2}>{title}</Title>

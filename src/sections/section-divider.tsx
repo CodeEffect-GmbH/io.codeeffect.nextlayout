@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
-import { ClassNameProps } from "./components.model";
+import { ClassNameProps } from "../components.model";
 import MaxWidthContainer from "./max-width-container";
-import Divider from "./divider";
+import Divider from "../divider";
 
 const SectionDivider: FunctionComponent<ClassNameProps> = ({
     className

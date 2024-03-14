@@ -1,16 +1,18 @@
 'use client'
 
 import { FunctionComponent, PropsWithChildren } from "react";
-import MaxWidthContainer from "./max-width-container";
-import CopyrightNotice from "./copyright-notice";
-import { ClassNameProps } from "./components.model";
+import MaxWidthContainer from "../sections/max-width-container";
+import CopyrightNotice from "../copyright-notice";
+import { ClassNameProps } from "../components.model";
 
 export interface FooterProps extends ClassNameProps {
     copyrightNotice?: string;
+    backToTopClassName?: string;
 }
 
 const Footer: FunctionComponent<PropsWithChildren<FooterProps>> = ({
     copyrightNotice,
+    backToTopClassName,
     className,
     children
 }) => {
@@ -29,7 +31,7 @@ const Footer: FunctionComponent<PropsWithChildren<FooterProps>> = ({
                     <div className="flex justify-between items-center">
                         {copyrightNotice && <CopyrightNotice>{copyrightNotice}</CopyrightNotice>}
 
-                        <button className="hover:scale-105 hover:drop-shadow-md transition-transform" onClick={backToTop}>
+                        <button className={`hover:scale-105 hover:drop-shadow-md transition-transform ${backToTopClassName}`} onClick={backToTop}>
                             <div className="relative w-10 h-10">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><title>arrow-up-bold</title><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
                             </div>

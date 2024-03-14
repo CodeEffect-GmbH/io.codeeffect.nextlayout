@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import { ClassNameProps } from "./components.model";
+import { ClassNameProps } from "../components.model";
 
 const NavBar: FunctionComponent<PropsWithChildren<ClassNameProps>> = ({
     className,
