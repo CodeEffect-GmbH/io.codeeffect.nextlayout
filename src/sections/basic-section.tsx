@@ -9,10 +9,11 @@ const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     overTitle,
     overTitleClassName,
     overTitleIcon,
+    forceLast = false,
     children
 }) => {
     return (
-        <Section>
+        <Section forceLast={forceLast}>
             <MaxWidthContainer>
                 <div className='flex flex-col'>
                     <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />

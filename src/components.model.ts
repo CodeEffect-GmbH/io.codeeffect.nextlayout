@@ -4,7 +4,11 @@ export interface ClassNameProps {
     className?: string;
 }
 
-export interface SectionProps {
+export interface MinimalSectionProps extends ClassNameProps {
+    forceLast?: boolean;
+}
+
+export interface SectionProps extends MinimalSectionProps {
     title: string;
     overTitle: string;
     overTitleClassName?: string;

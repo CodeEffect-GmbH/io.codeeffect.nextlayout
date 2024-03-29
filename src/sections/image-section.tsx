@@ -15,12 +15,13 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     title,
     overTitle,
     overTitleClassName,
+    forceLast = false,
     reversed = false,
     overTitleIcon,
     children
 }) => {
     return (
-        <Section>
+        <Section forceLast={forceLast}>
             <MaxWidthContainer>
                 <div className={`flex items-center ${reversed ? 'flex-col md:flex-row-reverse' : 'flex-col md:flex-row'}`}>
                     <div className="flex-1 relative self-stretch flex items-center justify-center">

@@ -15,12 +15,13 @@ const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
     overTitle,
     overTitleClassName,
     overTitleIcon,
+    forceLast = false,
     description,
     className,
     children
 }) => {
     return (
-        <Section className={`pb-24 md:pb-48 ${className ? className : ''}`}>
+        <Section forceLast={forceLast} className={`pb-24 md:pb-48 ${className ? className : ''}`}>
             <MaxWidthContainer>
                 <div className='flex flex-col items-center'>
                     <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
