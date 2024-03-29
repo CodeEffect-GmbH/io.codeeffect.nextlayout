@@ -1,30 +1,46 @@
 {
-  "name": "codeeffect-website-components",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@codeeffect-gmbh/io.codeeffect.nextlayout",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/CodeEffect-GmbH"
   },
+  "version": "1.0.0",
+  "description": "Reusable component library used for layout creation using NextJS.",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "author": "CodeEffect GmbH",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeEffect-GmbH/codeeffect-website-components.git"
+    "url": "git+https://github.com/CodeEffect-GmbH/io.codeeffect.nextlayout.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeEffect-GmbH/codeeffect-website-components/issues"
+    "url": "https://github.com/CodeEffect-GmbH/io.codeeffect.nextlayout/issues"
   },
-  "homepage": "https://github.com/CodeEffect-GmbH/codeeffect-website-components#readme",
+  "homepage": "https://github.com/CodeEffect-GmbH/io.codeeffect.nextlayout",
   "devDependencies": {
-    "typescript": "^5",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "react": "^18.2.0",
-    "tailwindcss": "^3.3.0"
+    "rollup": "^4.13.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "tslib": "^2.6.2"
   },
   "peerDependencies": {
+    "next": "14.1.3",
     "react": "^18.2.0",
     "tailwindcss": "^3.3.0"
   }
