@@ -1,8 +1,8 @@
 'use client'
 
 import { FunctionComponent, PropsWithChildren, useState } from "react";
-import Title from "../title";
-import Text from "../text";
+import Title from "../typography/title";
+import Text from "../typography/text";
 import { ClassNameProps } from "../components.model";
 
 export interface FAQItemProps extends ClassNameProps {

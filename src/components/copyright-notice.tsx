@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import Text from "./text";
+import Text from "./typography/text";
 
 const CopyrightNotice: FunctionComponent<PropsWithChildren> = ({
     children

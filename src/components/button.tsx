@@ -2,7 +2,7 @@
 
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { ClassNameProps } from "./components.model";
-import Text from "./text";
+import Text from "./typography/text";
 
 export interface ButtonProps extends ClassNameProps {
     icon?: ReactNode;

@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
-import Text from "./text";
-import Title from "./title";
+import Text from "./typography/text";
+import Title from "./typography/title";
 
 export interface BulletListItemProps {
     title?: string;

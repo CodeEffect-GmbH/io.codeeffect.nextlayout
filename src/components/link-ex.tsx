@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import { ClassNameProps } from "./components.model";
 import Link from 'next/link';
-import Text from "./text";
+import Text from "./typography/text";
 
 export interface LinkExProps extends ClassNameProps {
     external?: boolean;

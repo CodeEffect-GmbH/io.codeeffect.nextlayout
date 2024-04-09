@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import Title from "../title";
+import Title from "../typography/title";
 import { FooterGroupProps } from "./footer.model";
 
 const FooterLinkGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> = ({

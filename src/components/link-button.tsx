@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
-import Title from "./title";
+import Title from "./typography/title";
 import { ClassNameProps } from "./components.model";
 import LinkEx from "./link-ex";
 

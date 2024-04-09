@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from "react";
-import Title from "../title";
+import Title from "../typography/title";
 
 export interface SectionHeaderProps {
     title: string;

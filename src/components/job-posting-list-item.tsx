@@ -1,8 +1,8 @@
 'use client'
 
 import { FunctionComponent, ReactNode } from "react";
-import Title from "./title";
-import Text from "./text";
+import Title from "./typography/title";
+import Text from "./typography/text";
 import Button from "./button";
 import { ClassNameProps } from "./components.model";
 

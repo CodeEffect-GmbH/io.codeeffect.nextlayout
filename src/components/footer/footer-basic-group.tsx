@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import Title from "../title";
-import Text from "../text";
+import Title from "../typography/title";
+import Text from "../typography/text";
 import { FooterGroupProps } from "./footer.model";
 
 const FooterBasicGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> = ({

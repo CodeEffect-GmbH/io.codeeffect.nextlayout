@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Title from "../title";
+import Title from "../typography/title";
 import { FooterGroupProps } from "./footer.model";
 
 export interface FooterSocialMediaProps extends FooterGroupProps {
