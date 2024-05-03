@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { TextProps } from "./components.model";
+import { TextProps } from "./typography.model";
 
 const Text: FunctionComponent<React.PropsWithChildren<TextProps>> = ({
     level = 1,

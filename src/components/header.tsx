@@ -3,7 +3,6 @@ import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { ClassNameProps } from "./components.model";
 
 export interface HeaderProps extends ClassNameProps {
-    isHome?: boolean;
     shadow?: boolean;
     logo: ReactNode;
     logoLink: string;
@@ -11,7 +10,6 @@ export interface HeaderProps extends ClassNameProps {
 }
 
 const Header: FunctionComponent<PropsWithChildren<HeaderProps>> = ({
-    isHome = false,
     shadow: dropShadow = true,
     logo,
     logoLink,

@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { TextProps } from "./components.model";
+import { TextProps } from "./typography.model";
 
 export interface HeadingTitleProps extends TextProps {
     uppercase?: boolean;

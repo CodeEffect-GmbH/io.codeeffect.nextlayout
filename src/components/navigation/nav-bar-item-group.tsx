@@ -1,7 +1,7 @@
 'use client'
 
 import { FunctionComponent, PropsWithChildren, useState } from "react";
-import NavBarSubmenu from "./nav-bar-item-submenu";
+import NavBarSubmenu from "./nav-bar-submenu";
 import { NavBarItemGroupProps } from "./nav.model";
 
 const NavBarItemGroup: FunctionComponent<PropsWithChildren<NavBarItemGroupProps>> = ({
