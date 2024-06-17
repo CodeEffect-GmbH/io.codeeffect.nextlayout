@@ -9,8 +9,8 @@ export interface MinimalSectionProps extends ClassNameProps {
 }
 
 export interface SectionProps extends MinimalSectionProps {
-    title: string;
-    overTitle: string;
+    title: string | ReactNode;
+    overTitle: string | ReactNode;
     overTitleClassName?: string;
     overTitleIcon?: ReactNode;
 }

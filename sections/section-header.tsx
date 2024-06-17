@@ -2,8 +2,8 @@ import { FunctionComponent, ReactNode } from "react";
 import Title from "../typography/title";
 
 export interface SectionHeaderProps {
-    title: string;
-    overTitle: string;
+    title: string | ReactNode;
+    overTitle: string | ReactNode;
     overTitleClassName?: string;
     align?: string;
     overTitleIcon?: ReactNode;
