@@ -13,8 +13,7 @@ export interface ImageSectionProps extends SectionProps {
 const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     imageUrl,
     title,
-    overTitle,
-    overTitleClassName,
+    subtitle,
     forceLast = false,
     reversed = false,
     overTitleIcon,
@@ -40,7 +39,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                         </div>
                     </div>
                     <div className="flex-1">
-                        <SectionHeader title={title} overTitle={overTitle} overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
+                        <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
                         <div>{children}</div>
                     </div>
                 </div>

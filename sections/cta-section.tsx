@@ -12,8 +12,7 @@ export interface CTASectionProps extends SectionProps {
 
 const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
     title,
-    overTitle,
-    overTitleClassName,
+    subtitle,
     overTitleIcon,
     forceLast = false,
     description,
@@ -24,7 +23,7 @@ const CTASection: FunctionComponent<PropsWithChildren<CTASectionProps>> = ({
         <Section forceLast={forceLast} className={`pb-24 md:pb-48 ${className ? className : ''}`}>
             <MaxWidthContainer>
                 <div className='flex flex-col items-center'>
-                    <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
+                    <SectionHeader title={title} subtitle={subtitle} align='center' overTitleIcon={overTitleIcon} />
                     {description &&
                         <div className="text-center">
                             <Text compact>{description}</Text>

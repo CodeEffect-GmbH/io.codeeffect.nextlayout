@@ -6,8 +6,7 @@ import { SectionProps } from "../components.model";
 
 const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     title,
-    overTitle,
-    overTitleClassName,
+    subtitle,
     overTitleIcon,
     forceLast = false,
     children
@@ -16,7 +15,7 @@ const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
         <Section forceLast={forceLast}>
             <MaxWidthContainer>
                 <div className='flex flex-col'>
-                    <SectionHeader title={title} overTitle={overTitle} align='center' overTitleIcon={overTitleIcon} overTitleClassName={overTitleClassName} />
+                    <SectionHeader title={title} subtitle={subtitle} align='center' overTitleIcon={overTitleIcon} />
                     <div>{children}</div>
                 </div>
             </MaxWidthContainer>

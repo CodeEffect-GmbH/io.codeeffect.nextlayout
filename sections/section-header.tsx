@@ -1,18 +1,19 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent, ReactElement } from "react";
 import Title from "../typography/title";
+import React from "react";
 
 export interface SectionHeaderProps {
-    title: string;
-    overTitle: string;
-    overTitleClassName?: string;
-    align?: string;
-    overTitleIcon?: ReactNode;
+    title: string | ReactElement;
+    subtitle: string | ReactElement;
+    align?: SectionHeaderAlignment;
+    overTitleIcon?: ReactElement;
 }
+
+export type SectionHeaderAlignment = 'left' | 'center' | 'right';
 
 const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
     title,
-    overTitle,
-    overTitleClassName,
+    subtitle,
     align = 'left',
     overTitleIcon
 }) => {
@@ -21,12 +22,12 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
 
     return (
         <div>
-            <div className={`flex mb-2 md:mb-4 ${alignClassFlex} ${overTitleClassName}`}>
+            <div className={`flex mb-2 md:mb-4 ${alignClassFlex}`}>
                 {overTitleIcon && <div className="mr-2">{overTitleIcon}</div>}
-                <Title className="text-pretty" level={5} uppercase compact>{overTitle}</Title>
+                {React.isValidElement(subtitle) ? subtitle : <Title className="text-pretty" level={5} uppercase compact>{subtitle}</Title>}
             </div>
             <div className={alignClass}>
-                <Title level={2}>{title}</Title>
+                {React.isValidElement(title) ? title : <Title level={2}>{title}</Title>}
             </div>
         </div>
     );

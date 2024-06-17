@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 
 export interface ClassNameProps {
     className?: string;
@@ -9,10 +9,9 @@ export interface MinimalSectionProps extends ClassNameProps {
 }
 
 export interface SectionProps extends MinimalSectionProps {
-    title: string;
-    overTitle: string;
-    overTitleClassName?: string;
-    overTitleIcon?: ReactNode;
+    title: string | ReactElement;
+    subtitle: string | ReactElement;
+    overTitleIcon?: ReactElement;
 }
 
 export interface SourceProps {
