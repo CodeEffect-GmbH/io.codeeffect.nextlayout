@@ -27,7 +27,7 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
                 {React.isValidElement(subtitle) ? subtitle : <Title className="text-pretty" level={5} uppercase compact>{subtitle}</Title>}
             </div>
             <div className={alignClass}>
-                {React.isValidElement(title) ? title : <Title level={2}>{title}</Title>}
+                {React.isValidElement(title) ? title : <Title level={3}>{title}</Title>}
             </div>
         </div>
     );
