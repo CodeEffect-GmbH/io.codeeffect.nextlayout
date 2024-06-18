@@ -18,8 +18,8 @@ const Title: FunctionComponent<React.PropsWithChildren<HeadingTitleProps>> = ({
             {level === 2 && <h2 className="line-styled-heading text-3xl md:text-4xl lg:text-5xl font-bold">{children}</h2>}
             {level === 3 && <h3 className="line-styled-heading text-2xl md:text-3xl lg:text-4xl font-bold">{children}</h3>}
             {level === 4 && <h4 className="line-styled-heading text-2xl md:text-2xl lg:text-3xl font-bold">{children}</h4>}
-            {level === 5 && <h5 className="line-styled-heading text-1xl md:text-2xl font-bold">{children}</h5>}
-            {level === 6 && <h6 className="line-styled-heading text-1xl md:text-2xl">{children}</h6>}
+            {level === 5 && <h5 className="line-styled-heading text-base md:text-xl font-bold">{children}</h5>}
+            {level === 6 && <h6 className="line-styled-heading text-base md:text-xl">{children}</h6>}
         </div>
     );
 }
