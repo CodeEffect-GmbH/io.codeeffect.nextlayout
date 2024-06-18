@@ -7,11 +7,13 @@ import { SectionProps } from "../components.model";
 
 export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
+    imageAlt: string;
     reversed?: boolean;
 }
 
 const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     imageUrl,
+    imageAlt,
     title,
     subtitle,
     forceLast = false,
@@ -26,12 +28,12 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                     <div className="flex-1 relative self-stretch flex items-center justify-center">
                         <div className="relative w-4/5 h-4/5 mb-8 md:mb-0">
                             <div className="hidden md:block">
-                                <Image src={imageUrl} alt={title} fill style={{
+                                <Image src={imageUrl} alt={imageAlt} fill style={{
                                     objectFit: 'contain'
                                 }} />
                             </div>
                             <div className="block h-64 md:hidden">
-                                <Image src={imageUrl} alt={title} fill
+                                <Image src={imageUrl} alt={imageAlt} fill
                                     style={{
                                         objectFit: 'contain'
                                     }} />
