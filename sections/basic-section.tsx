@@ -9,6 +9,7 @@ const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     subtitle,
     className,
     overTitleIcon,
+    align = 'center',
     forceLast = false,
     children
 }) => {
@@ -16,7 +17,7 @@ const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
         <Section className={className} forceLast={forceLast}>
             <MaxWidthContainer>
                 <div className='flex flex-col'>
-                    <SectionHeader title={title} subtitle={subtitle} align='center' overTitleIcon={overTitleIcon} />
+                    <SectionHeader align={align} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
                     <div>{children}</div>
                 </div>
             </MaxWidthContainer>

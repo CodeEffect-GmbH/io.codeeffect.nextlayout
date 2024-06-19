@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { SectionHeaderProps } from "./sections/section-header";
 
 export interface ClassNameProps {
     className?: string;
@@ -8,11 +8,7 @@ export interface MinimalSectionProps extends ClassNameProps {
     forceLast?: boolean;
 }
 
-export interface SectionProps extends MinimalSectionProps {
-    title: string | ReactElement;
-    subtitle: string | ReactElement;
-    overTitleIcon?: ReactElement;
-}
+export interface SectionProps extends MinimalSectionProps, SectionHeaderProps { }
 
 export interface SourceProps {
     src: string;
