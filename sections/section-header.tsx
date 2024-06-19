@@ -1,8 +1,9 @@
 import { FunctionComponent, ReactElement } from "react";
 import Title from "../typography/title";
 import React from "react";
+import { ClassNameProps } from "../components.model";
 
-export interface SectionHeaderProps {
+export interface SectionHeaderProps extends ClassNameProps {
     title: string | ReactElement;
     subtitle: string | ReactElement;
     align?: SectionHeaderAlignment;
@@ -12,6 +13,7 @@ export interface SectionHeaderProps {
 export type SectionHeaderAlignment = 'left' | 'center' | 'right';
 
 const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
+    className,
     title,
     subtitle,
     align = 'left',
@@ -21,7 +23,7 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
     const alignClassFlex = align === 'left' ? 'justify-left' : (align === 'center' ? 'justify-center' : 'justify-right');
 
     return (
-        <div>
+        <div className={className}>
             <div className={`flex mb-2 md:mb-4 ${alignClassFlex}`}>
                 {overTitleIcon && <div className="mr-2">{overTitleIcon}</div>}
                 {React.isValidElement(subtitle) ? subtitle : <Title className="text-pretty" level={5} uppercase compact>{subtitle}</Title>}
