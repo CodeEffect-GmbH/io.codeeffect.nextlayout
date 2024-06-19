@@ -11,24 +11,11 @@ const NewsItemsView: FunctionComponent<NewsItemsViewProps> = ({
     itemsPerRow = 3,
     items
 }) => {
-    const buildRows = () => {
-        const rows = [];
-
-        for (let i = 0; i < items.length; i += itemsPerRow) {
-            const row = items.slice(i, i + itemsPerRow);
-            rows.push(row);
-        }
-
-        return rows;
-    };
+    const rowsNeeded = Math.ceil(items.length / itemsPerRow);
 
     return (
-        <div>
-            {buildRows().map((row, rowIndex) =>
-                <div key={rowIndex} className={`grid md:grid-cols-${itemsPerRow} gap-8 mt-8`}>
-                    {row.map((item, itemIndex) => <NewsItem key={itemIndex} className={`basis-1/${itemsPerRow}`} info={item} />)}
-                </div>
-            )}
+        <div className={`grid grid-cols-${itemsPerRow} grid-rows-${rowsNeeded} gap-4 md:gap-8`}>
+            {items.map((item, itemIndex) => <NewsItem key={itemIndex} info={item} />)}
         </div>
     );
 }
