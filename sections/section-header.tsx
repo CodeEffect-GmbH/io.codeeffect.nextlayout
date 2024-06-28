@@ -20,7 +20,7 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
     overTitleIcon
 }) => {
     const alignClass = align === 'left' ? 'text-left' : (align === 'center' ? 'text-center' : 'text-right');
-    const alignClassFlex = align === 'left' ? 'justify-left' : (align === 'center' ? 'justify-center' : 'justify-right');
+    const alignClassFlex = align === 'left' ? 'justify-start' : (align === 'center' ? 'justify-center' : 'justify-end');
 
     return (
         <div className={className}>
