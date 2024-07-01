@@ -21,7 +21,7 @@ const FAQItem: FunctionComponent<PropsWithChildren<FAQItemProps>> = ({
     };
 
     return (
-        <div className={`p-4 md:p-8 rounded-lg cursor-pointer ${className ? className : 'bg-gray-100'}`} onClick={toggle}>
+        <div className={`p-4 md:p-8 cursor-pointer ${className ? className : 'bg-gray-100'}`} onClick={toggle}>
             <div className={`flex justify-between items-center transition-all ${expand ? 'mb-4' : 'mb-0'}`} onClick={toggle}>
                 <Title level={5} compact>{question}</Title>
                 <div className={`ml-4 shrink-0 w-10 md:w-12 h-10 md:h-12 transition-transform ${expand ? 'rotate-180' : 'rotate-0'}`}>
