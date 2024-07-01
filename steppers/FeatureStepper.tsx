@@ -25,7 +25,7 @@ const FeatureStepper: FunctionComponent<FeatureStepperProps> = ({
     const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
     return (
-        <div className={`flex flex-row h-[500px] ${className}`}>
+        <div className={`flex flex-col md:flex-row h-[500px] ${className}`}>
             <div className={contentsContainerClassName ? contentsContainerClassName : 'basis-2/3'}>
                 {contents[selectedIndex]}
             </div>
