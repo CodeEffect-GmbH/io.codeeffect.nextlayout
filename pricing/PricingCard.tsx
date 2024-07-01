@@ -27,7 +27,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
     featureIcon
 }) => {
     return (
-        <div>
+        <div className="flex flex-col">
             <div className={`p-4 md:p-8 bg-gray-100 flex justify-center items-center h-20 ${headerClassName}`}>
                 <div className="text-center">
                     <Title uppercase compact level={5}>{tierName}</Title>
