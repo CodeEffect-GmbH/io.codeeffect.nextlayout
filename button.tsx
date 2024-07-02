@@ -18,7 +18,7 @@ const Button: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
     children
 }) => {
     return (
-        <div className={`flex items-center cursor-pointer p-4 rounded-lg transition-transform hover:drop-shadow-md hover:scale-105 ${className}`}
+        <div className={`flex items-center cursor-pointer p-4 transition-transform hover:drop-shadow-md hover:scale-105 ${className}`}
             onClick={onClick}>
             {children && <div className={`font-bold ${icon ? 'mr-4' : ''}`}>
                 <Text level={level} compact>{children}</Text>
