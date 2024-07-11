@@ -23,7 +23,8 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
 
     const handleChange = (event: ChangeEvent<HTMLSelectElement>): void => {
         const selectedLanguage = event.target.value;
-        const pathnameWithoutLocale = pathname.replace(/^\/(en|de|fr)/, '');
+        const languagePattern = new RegExp(`^/(${languages.map(l => l.code).join('|')})`);
+        const pathnameWithoutLocale = pathname.replace(languagePattern, '');
         router.replace(`/${selectedLanguage}${pathnameWithoutLocale}`);
     };
 
