@@ -1,11 +1,12 @@
 'use client'
 
-import { ChangeEvent, FunctionComponent } from "react";
+import { ChangeEvent, FunctionComponent, ReactElement } from "react";
 import { LangProps } from "./lang.model";
 import Text from "../typography/text";
 import { useRouter, usePathname } from 'next/navigation';
 
 export interface Language {
+    flag: ReactElement;
     code: string;
     name: string;
 }
@@ -32,10 +33,14 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
         <div>
             <select
                 value={lang}
+                className="p-2 border-0"
                 onChange={handleChange}>
                 {languages.map((language) => (
                     <option key={language.code} value={language.code}>
-                        <Text>{language.name}</Text>
+                        <div className="flex">
+                            <div>{language.flag}</div>
+                            <Text>{language.name}</Text>
+                        </div>
                     </option>
                 ))}
             </select>
