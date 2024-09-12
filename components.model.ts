@@ -4,6 +4,10 @@ export interface ClassNameProps {
     className?: string;
 }
 
+export interface ImageAltProps {
+    alt: string;
+}
+
 export interface MinimalSectionProps extends ClassNameProps {
     forceLast?: boolean;
 }
