@@ -15,7 +15,7 @@ const Drawer: FunctionComponent<PropsWithChildren> = ({
     return (
         <div>
             <div className={`shadow-md fixed top-0 right-0 bottom-0 w-3/5 h-full transition-transform ease-in-out bg-white px-4 md:px-8 pt-28 ${open ? '' : 'translate-x-full'}`}>
-                <div className="absolute h-16 top-0 right-0 flex items-center">
+                <div className="absolute h-16 top-0 right-0 flex items-center m-4 md:m-8">
                     <DrawerToggle onToggle={toggle} />
                 </div>
                 <div>
@@ -24,7 +24,7 @@ const Drawer: FunctionComponent<PropsWithChildren> = ({
             </div>
 
             {!open &&
-                <div className="absolute h-16 top-0 right-0 flex items-center">
+                <div className="absolute h-16 top-0 right-0 flex items-center m-4 md:m-8">
                     <DrawerToggle onToggle={toggle} />
                 </div>}
         </div>
