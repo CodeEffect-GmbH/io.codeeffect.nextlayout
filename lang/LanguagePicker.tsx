@@ -25,7 +25,7 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
 }) => {
     const router = useRouter();
     const pathname = usePathname();
-    const [selectedLanguage, setSelectedLanguage] = useState(languages.find(l => l.code === lang)!);
+    const selectedLanguage = languages.find(l => l.code === lang)!;
     const [isOpen, setIsOpen] = useState(false);
 
     const handleLanguageChange = (language: Language): void => {
