@@ -8,7 +8,7 @@ import { NavBarItemProps } from "./nav.model";
 const NavBarItem: FunctionComponent<NavBarItemProps> = (props) => {
     const pathname = usePathname()
     const [hover, setHover] = useState<boolean>(false);
-    const active = pathname === props.href;
+    const active = pathname.endsWith(props.href);
 
     const showHover = () => {
         setHover(true);
