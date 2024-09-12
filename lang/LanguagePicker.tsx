@@ -11,12 +11,16 @@ export interface Language {
     name: string;
 }
 
+export type LanguagePickerAlignment = 'left' | 'center' | 'right';
+
 export interface LanguagePickerProps extends LangProps {
+    alignment?: LanguagePickerAlignment;
     languages: Language[];
 }
 
 const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
     languages,
+    alignment = 'right',
     params: { lang }
 }) => {
     const router = useRouter();
@@ -30,6 +34,13 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
         router.replace(`/${language.code}${pathnameWithoutLocale}`);
     };
 
+    let alignmentStyle = 'right-0';
+    if (alignment === 'center') {
+        alignmentStyle = 'top-full left-1/2 translate-x-[-50%]';
+    } else if (alignment == 'left') {
+        alignmentStyle = 'left-0';
+    }
+
     return (
         <div className="relative inline-block">
             <div className="flex items-center cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
@@ -37,7 +48,7 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
             </div>
 
             {isOpen &&
-                <ul className="absolute flex flex-col bg-white p-2 rounded-lg mt-4 list-none right-0">
+                <ul className={`absolute flex flex-col bg-white p-2 rounded-lg mt-4 list-none ${alignmentStyle}`}>
                     {languages.map((language) => (
                         <li className="cursor-pointer flex py-2 items-center" key={language.code} onClick={() => handleLanguageChange(language)}>
                             <div>{language.flag}</div>
