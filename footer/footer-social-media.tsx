@@ -17,7 +17,6 @@ const FooterSocialMedia: FunctionComponent<FooterSocialMediaProps> = (props) => 
             {props.title &&
                 <div className="mb-8">
                     <Title className="mb-2 text-nowrap" level={5} compact>{props.title}</Title>
-                    <div className={`border-b-4 ${props.dividerClassName}`}></div>
                 </div>}
             <div className='flex flex gap-8'>
                 {props.linkedIn &&

@@ -5,7 +5,6 @@ import { FooterGroupProps } from "./footer.model";
 
 const FooterBasicGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> = ({
     title,
-    dividerClassName,
     children
 }) => {
     return (
@@ -13,7 +12,6 @@ const FooterBasicGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> =
             {title &&
                 <div className="mb-8">
                     <Title className="mb-2" level={5} compact>{title}</Title>
-                    <div className={`border-b-4 ${dividerClassName}`}></div>
                 </div>}
             <Text level={2}>{children}</Text>
         </div>
