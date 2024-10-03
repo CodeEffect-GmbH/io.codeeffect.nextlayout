@@ -31,8 +31,8 @@ const FooterLink: FunctionComponent<PropsWithChildren<FooterLinkProps>> = ({
 
     return (
         <div className="relative w-fit" onMouseEnter={showHover} onMouseLeave={hideHover}>
-            <LinkEx className={`mb-2 ${className}`} level={2} external={external} href={href} title={title}>{children}</LinkEx>
-            <div className={`${hover ? 'w-full' : 'w-0'} absolute transition-all bottom-0 border-b-4 border-black ${hoverActiveColorClassName}`}></div>
+            <LinkEx className={`mb-0 md:mb-2 ${className}`} level={2} external={external} href={href} title={title}>{children}</LinkEx>
+            <div className={`hidden md:block ${hover ? 'w-full' : 'w-0'} absolute transition-all bottom-0 border-b-4 border-black ${hoverActiveColorClassName}`}></div>
         </div>);
 }
 
