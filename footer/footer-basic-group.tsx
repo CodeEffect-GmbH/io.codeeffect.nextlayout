@@ -2,6 +2,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import Title from "../typography/title";
 import Text from "../typography/text";
 import { FooterGroupProps } from "./footer.model";
+import React from "react";
 
 const FooterBasicGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> = ({
     title,
@@ -9,10 +10,7 @@ const FooterBasicGroup: FunctionComponent<PropsWithChildren<FooterGroupProps>> =
 }) => {
     return (
         <div>
-            {title &&
-                <div className="mb-8">
-                    <Title className="mb-2" level={5} compact>{title}</Title>
-                </div>}
+            {title && <div>{React.isValidElement(title) ? title : <Title className="text-nowrap" level={5}>{title}</Title>}</div>}
             <Text level={2}>{children}</Text>
         </div>
     );

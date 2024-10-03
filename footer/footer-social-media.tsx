@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import Title from "../typography/title";
 import { FooterGroupProps } from "./footer.model";
+import React from "react";
 
 export interface FooterSocialMediaProps extends FooterGroupProps {
     linkedIn?: string;
@@ -14,10 +15,7 @@ export interface FooterSocialMediaProps extends FooterGroupProps {
 const FooterSocialMedia: FunctionComponent<FooterSocialMediaProps> = (props) => {
     return (
         <div>
-            {props.title &&
-                <div className="mb-8">
-                    <Title className="mb-2 text-nowrap" level={5} compact>{props.title}</Title>
-                </div>}
+            {props.title && <div>{React.isValidElement(props.title) ? props.title : <Title className="text-nowrap" level={5}>{props.title}</Title>}</div>}
             <div className='flex flex gap-8'>
                 {props.linkedIn &&
                     <a className={`w-10 h-10 hover:scale-105 hover:drop-shadow-md transition-transform ${props.iconClassName}`} href={props.linkedIn} title="LinkedIn">
