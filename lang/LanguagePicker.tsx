@@ -21,7 +21,7 @@ export interface LanguagePickerProps extends LangProps {
 const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
     languages,
     alignment = 'right',
-    params: { lang }
+    params: { lang } = { lang: 'en' }
 }) => {
     const router = useRouter();
     const pathname = usePathname();
