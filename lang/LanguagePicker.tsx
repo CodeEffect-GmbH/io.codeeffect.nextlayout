@@ -32,6 +32,7 @@ const LanguagePicker: FunctionComponent<LanguagePickerProps> = ({
         const languagePattern = new RegExp(`^/(${languages.map(l => l.code).join('|')})`);
         const pathnameWithoutLocale = pathname.replace(languagePattern, '');
         router.replace(`/${language.code}${pathnameWithoutLocale}`);
+        router.refresh();
     };
 
     let alignmentStyle = 'right-0';
