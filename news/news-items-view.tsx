@@ -12,7 +12,7 @@ const NewsItemsView: FunctionComponent<NewsItemsViewProps> = ({
     items
 }) => {
     return (
-        <div className={`grid grid-cols-1 md:grid-cols-${itemsPerRow} gap-4 md:gap-8`}>
+        <div className={`grid grid-cols-${itemsPerRow} md:grid-cols-${itemsPerRow} gap-4 md:gap-8`}>
             {items.map((item, itemIndex) => <NewsItem key={itemIndex} info={item} />)}
         </div>
     );
