@@ -7,8 +7,8 @@ const NewsItemTag: FunctionComponent<PropsWithChildren<ClassNameProps>> = ({
     className
 }) => {
     return (
-        <div className={`px-4 py-2 flex justify-center items-center ${className ? className : 'bg-gray-100 rounded-lg'}`}>
-            <Text level={2}>{children}</Text>
+        <div className={`px-4 py-2 flex justify-center items-center ${className}`}>
+            <Text compact level={2}>{children}</Text>
         </div>
     );
 }

@@ -2,17 +2,19 @@ import { FunctionComponent, useState } from "react";
 import { NewsItemInfo } from "./news.model";
 import Text from "../typography/text";
 import Title from "../typography/title";
-import NewsItemTag from "./news-item-tag";
+import NewsItemTag from "./NewsItemTag";
 import LinkEx from "../link-ex";
 import { ClassNameProps } from "../components.model";
 import Image from "next/image";
 
 export interface NewsItemProps extends ClassNameProps {
     info: NewsItemInfo;
+    tagsClassName?: string;
 }
 
 const NewsItem: FunctionComponent<NewsItemProps> = ({
     info,
+    tagsClassName,
     className
 }) => {
     const [hover, setHover] = useState<boolean>(false);
@@ -54,7 +56,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
                     </div>
                     <Text compact className="mb-4">{info.abstract}</Text>
                     <div className="mb-4 flex gap-4">
-                        {info.tags.map((tag, index) => <NewsItemTag key={index}>{tag}</NewsItemTag>)}
+                        {info.tags.map((tag, index) => <NewsItemTag className={tagsClassName} key={index}>{tag}</NewsItemTag>)}
                     </div>
                 </div>
             </LinkEx>
