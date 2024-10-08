@@ -5,7 +5,6 @@ import Title from "../typography/title";
 import NewsItemTag from "./NewsItemTag";
 import LinkEx from "../link-ex";
 import { ClassNameProps } from "../components.model";
-import Image from "next/image";
 
 export interface NewsItemProps extends ClassNameProps {
     info: NewsItemInfo;
@@ -41,7 +40,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
         <div className={className} onMouseEnter={showHover} onMouseLeave={hideHover}>
             <LinkEx className="" href={info.relativePath} title={info.title}>
                 <div className="relative bg-gray-100 w-full h-60 mb-4 rounded-lg overflow-hidden cursor-pointer">
-                    <Image src={info.imageSrc} alt={info.title} className={`w-full h-full object-cover transition-transform ${hover ? 'scale-105' : ''}`} fill />
+                    <img src={info.imageSrc} alt={info.title} className={`w-full h-full object-cover transition-transform ${hover ? 'scale-105' : ''}`} />
                 </div>
 
                 <div>
@@ -51,7 +50,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
                             <Title className={hover ? 'text-ce-complementary' : ''} level={5} compact>{info.title}</Title>
                         </div>
                         <div className="relative shrink-0 h-14 w-14 rounded-full overflow-hidden">
-                            <Image src={info.authorImageSrc} alt={info.authorName} fill />
+                            <img src={info.authorImageSrc} alt={info.authorName} className="object-cover" />
                         </div>
                     </div>
                     <Text compact className="mb-4">{info.abstract}</Text>
