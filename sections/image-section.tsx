@@ -8,12 +8,14 @@ import { SectionProps } from "../components.model";
 export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
     imageAlt: string;
+    imageUnoptimized?: boolean;
     reversed?: boolean;
 }
 
 const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     imageUrl,
     imageAlt,
+    imageUnoptimized = false,
     title,
     subtitle,
     forceLast = false,
@@ -30,13 +32,13 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                             <div className="hidden md:block">
                                 <Image src={imageUrl} alt={imageAlt} fill style={{
                                     objectFit: 'contain'
-                                }} />
+                                }} unoptimized={imageUnoptimized} />
                             </div>
                             <div className="block h-64 md:hidden">
                                 <Image src={imageUrl} alt={imageAlt} fill
                                     style={{
                                         objectFit: 'contain'
-                                    }} />
+                                    }} unoptimized={imageUnoptimized} />
                             </div>
                         </div>
                     </div>
