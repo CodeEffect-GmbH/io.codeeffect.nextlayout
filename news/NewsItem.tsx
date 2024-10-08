@@ -9,11 +9,13 @@ import Image from "next/image";
 
 export interface NewsItemProps extends ClassNameProps {
     info: NewsItemInfo;
+    locale: string;
     tagsClassName?: string;
 }
 
 const NewsItem: FunctionComponent<NewsItemProps> = ({
     info,
+    locale,
     tagsClassName,
     className
 }) => {
@@ -34,7 +36,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
         day: 'numeric'
     };
 
-    const dateTimeFormatter = new Intl.DateTimeFormat(undefined, options);
+    const dateTimeFormatter = new Intl.DateTimeFormat(locale, options);
     const formattedDate = dateTimeFormatter.format(Date.parse(info.date));
 
     return (
