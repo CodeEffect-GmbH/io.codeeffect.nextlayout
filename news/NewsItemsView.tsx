@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { NewsItemInfo } from "./news.model";
-import NewsItem from "./news-item";
+import NewsItem from "./NewsItem";
 
 export interface NewsItemsViewProps {
     itemsPerRow?: number;
