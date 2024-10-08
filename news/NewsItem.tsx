@@ -39,7 +39,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
         <div className={className} onMouseEnter={showHover} onMouseLeave={hideHover}>
             <LinkEx className="" href={info.relativePath} title={info.title}>
                 <div className="relative bg-gray-100 w-full h-60 mb-4 rounded-lg overflow-hidden cursor-pointer">
-                    <img src={info.imageSrc} alt={info.title} className={`w-full h-full object-cover transition-transform ${hover ? 'scale-105' : ''}`} />
+                    <Image src={info.imageSrc} alt={info.title} className={`w-full h-full object-cover transition-transform ${hover ? 'scale-105' : ''}`} fill />
                 </div>
 
                 <div>
