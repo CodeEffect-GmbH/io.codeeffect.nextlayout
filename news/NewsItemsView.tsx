@@ -11,6 +11,10 @@ const NewsItemsView: FunctionComponent<NewsItemsViewProps> = ({
     itemsPerRow = 3,
     items
 }) => {
+    if (itemsPerRow > items.length) {
+        itemsPerRow = items.length;
+    }
+
     return (
         <div className={`grid grid-cols-${itemsPerRow} md:grid-cols-${itemsPerRow} gap-4 md:gap-8`}>
             {items.map((item, itemIndex) => <NewsItem key={itemIndex} info={item} />)}
