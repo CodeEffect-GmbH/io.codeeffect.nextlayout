@@ -25,7 +25,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
 }) => {
     return (
         <>
-            <BasicSection className="flex lg:hidden" title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
+            <BasicSection className="flex lg:hidden" forceLast={forceLast} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
                 <div className="relative w-full h-80">
                     <Image src={imageUrl} alt={imageAlt} fill style={{
                         objectFit: 'cover'
