@@ -25,14 +25,6 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
 }) => {
     return (
         <>
-            <BasicSection className="flex lg:hidden" forceLast={forceLast} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
-                <div className="relative w-full h-80">
-                    <Image src={imageUrl} alt={imageAlt} fill style={{
-                        objectFit: 'cover'
-                    }} unoptimized={imageUnoptimized} />
-                </div>
-                <div className="mt-4 md:mt-8">{children}</div>
-            </BasicSection>
             <TwoColumnSection className="hidden lg:flex" forceLast={forceLast} reversed={reversed}
                 left={
                     <div className="relative w-full h-full">
@@ -48,6 +40,14 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                     </div>
                 }>
             </TwoColumnSection>
+            <BasicSection className="flex lg:hidden" forceLast={forceLast} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
+                <div className="relative w-full h-80">
+                    <Image src={imageUrl} alt={imageAlt} fill style={{
+                        objectFit: 'cover'
+                    }} unoptimized={imageUnoptimized} />
+                </div>
+                <div className="mt-4 md:mt-8">{children}</div>
+            </BasicSection>
         </>
     );
 }
