@@ -22,22 +22,36 @@ const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCard
     children
 }) => {
     return (
-        <div className={`bg-white flex flex-col overflow-hidden p-4 md:p-8 h-[28rem] ${className}`}>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full'>
-                <div className="flex flex-col justify-between">
-                    <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} anchorId={anchorId} />
-                    <div className="h-full">
-                        {children}
+        <>
+            <div className={`hidden bg-white lg:flex flex-col overflow-hidden p-4 md:p-8 h-[28rem] ${className}`}>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full'>
+                    <div className="flex flex-col justify-between">
+                        <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} anchorId={anchorId} />
+                        <div className="h-full">
+                            {children}
+                        </div>
+                    </div>
+                    <div className="relative">
+                        <video className={`absolute h-full w-full left-0 top-0 object-cover ${videoPlayerClassName}`} controls
+                            poster={videoPosterSrc}>
+                            <source src={videoSrc} type="video/webm" />
+                        </video>
                     </div>
                 </div>
-                <div className="relative">
+            </div>
+            <div className={`flex flex-col lg:hidden ${className}`}>
+                <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} anchorId={anchorId} />
+                <div className="relative h-[14rem]">
                     <video className={`absolute h-full w-full left-0 top-0 object-cover ${videoPlayerClassName}`} controls
                         poster={videoPosterSrc}>
                         <source src={videoSrc} type="video/webm" />
                     </video>
                 </div>
+                <div className="h-full mt-4 md:mt-8">
+                    {children}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
