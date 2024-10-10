@@ -25,7 +25,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     return (
         <TwoColumnSection forceLast={forceLast} reversed={reversed}
             left={
-                <div className="flex-1 relative self-stretch flex items-center justify-center">
+                <div className="bg-black flex-1 relative self-stretch flex items-center justify-center">
                     <div className="relative w-4/5 h-4/5 mb-8 md:mb-0">
                         <div className="hidden md:block">
                             <Image src={imageUrl} alt={imageAlt} fill style={{
@@ -42,7 +42,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
                 </div>
             }
             right={
-                <div className="flex-1">
+                <div className="flex-1 bg-white">
                     <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
                     <div>{children}</div>
                 </div>

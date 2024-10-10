@@ -18,10 +18,18 @@ const TwoColumnSection: FunctionComponent<PropsWithChildren<TwoColumnSection>> =
     return (
         <Section forceLast={forceLast}>
             <MaxWidthContainer>
-                <div className={`flex items-center ${reversed ? 'flex-col md:flex-row-reverse' : 'flex-col md:flex-row'}`}>
-                    {left}
-                    {right}
-                </div>
+                {reversed &&
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8'>
+                        {right}
+                        {left}
+                    </div>
+                }
+                {!reversed &&
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8'>
+                        {left}
+                        {right}
+                    </div>
+                }
             </MaxWidthContainer>
         </Section>
     );
