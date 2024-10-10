@@ -49,7 +49,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
                     <div className="grid grid-cols-1">
                         {features.map((feature, index) =>
                             <div key={index} className="px-4 md:px-8 py-4 flex items-center gap-4">
-                                {feature.icon}
+                                <div>{feature.icon}</div>
                                 <Text compact className={feature.textClassName}>{feature.text}</Text>
                             </div>
                         )}
