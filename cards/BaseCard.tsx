@@ -3,13 +3,13 @@ import React from "react";
 import Title from "../typography/title";
 import Text from "../typography/text";
 
-export interface SimpleCardProps {
+export interface BaseCardProps {
     title: string | ReactElement;
     body: string | ReactElement;
     footer?: ReactElement;
 }
 
-const SimpleCard: FunctionComponent<SimpleCardProps> = ({
+const BaseCard: FunctionComponent<BaseCardProps> = ({
     title,
     body,
     footer = null
@@ -25,4 +25,4 @@ const SimpleCard: FunctionComponent<SimpleCardProps> = ({
     );
 }
 
-export default SimpleCard;
+export default BaseCard;
