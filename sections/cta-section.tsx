@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import Section from "./section";
+import Section from "./Section";
 import MaxWidthContainer from "./max-width-container";
 import Text from "../typography/text";
 import SectionHeader from "./section-header";

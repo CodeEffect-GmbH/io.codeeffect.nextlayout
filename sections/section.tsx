@@ -7,7 +7,7 @@ const Section: FunctionComponent<PropsWithChildren<MinimalSectionProps>> = ({
     children
 }) => {
     return (
-        <div className={`px-4 md:px-8 pt-24 md:pt-48 ${forceLast ? 'pb-24 md:pb-48' : 'last:pb-24 md:last:pb-48'} flex justify-center ${className ? className : ''}`}>
+        <div className={`px-4 md:px-8 pt-24 lg:pt-44 ${forceLast ? 'pb-24 lg:pb-44' : 'last:pb-24 lg:last:pb-44'} flex justify-center ${className ? className : ''}`}>
             {children}
         </div>
     );
