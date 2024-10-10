@@ -5,10 +5,14 @@ import SectionHeader, { SectionHeaderProps } from "../sections/section-header";
 
 export interface ExplainerVideoCardProps extends ClassNameProps, SectionHeaderProps {
     videoSrc: string;
+    videoPosterSrc: string;
+    videoPlayerClassName?: string;
 }
 
 const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCardProps>> = ({
     videoSrc,
+    videoPosterSrc,
+    videoPlayerClassName,
     title,
     subtitle,
     overTitleIcon,
@@ -27,8 +31,8 @@ const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCard
                     </div>
                 </div>
                 <div className="relative">
-                    <video className="absolute h-full w-full left-0 top-0 object-cover"
-                        autoPlay muted loop controls={false}>
+                    <video className={`absolute h-full w-full left-0 top-0 object-cover ${videoPlayerClassName}`} controls
+                        poster={videoPosterSrc}>
                         <source src={videoSrc} type="video/webm" />
                     </video>
                 </div>
