@@ -3,6 +3,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import { SectionProps } from "../components.model";
 import TwoColumnSection from "./TwoColumnSection";
 import SectionHeader from "./section-header";
+import BasicSection from "./basic-section";
 
 export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
@@ -23,31 +24,35 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     children
 }) => {
     return (
-        <TwoColumnSection forceLast={forceLast} reversed={reversed}
-            left={
-                <div className="bg-black flex-1 relative self-stretch flex items-center justify-center">
-                    <div className="relative w-4/5 h-4/5 mb-8 md:mb-0">
-                        <div className="hidden md:block">
+        <div>
+            <div className="block lg:hidden">
+                <BasicSection title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
+                    <div className="relative w-full h-80">
+                        <Image src={imageUrl} alt={imageAlt} fill style={{
+                            objectFit: 'cover'
+                        }} unoptimized={imageUnoptimized} />
+                    </div>
+                    <div className="mt-4 md:mt-8">{children}</div>
+                </BasicSection>
+            </div>
+            <div className="hidden lg:block">
+                <TwoColumnSection forceLast={forceLast} reversed={reversed}
+                    left={
+                        <div className="relative w-full h-full">
                             <Image src={imageUrl} alt={imageAlt} fill style={{
-                                objectFit: 'contain'
+                                objectFit: 'cover'
                             }} unoptimized={imageUnoptimized} />
                         </div>
-                        <div className="block h-64 md:hidden">
-                            <Image src={imageUrl} alt={imageAlt} fill
-                                style={{
-                                    objectFit: 'contain'
-                                }} unoptimized={imageUnoptimized} />
+                    }
+                    right={
+                        <div>
+                            <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
+                            <div>{children}</div>
                         </div>
-                    </div>
-                </div>
-            }
-            right={
-                <div className="flex-1 bg-white">
-                    <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
-                    <div>{children}</div>
-                </div>
-            }>
-        </TwoColumnSection>
+                    }>
+                </TwoColumnSection>
+            </div>
+        </div>
     );
 }
 
