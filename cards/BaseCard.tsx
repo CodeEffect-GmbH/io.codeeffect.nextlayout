@@ -17,9 +17,9 @@ const BaseCard: FunctionComponent<BaseCardProps> = ({
     className
 }) => {
     return (
-        <div className={`bg-white flex flex-col ${className}`}>
+        <div className={`bg-white flex flex-col overflow-hidden ${className}`}>
             {React.isValidElement(title) ? title : <Title compact className="p-4 md:p-8" level={5}>{title}</Title>}
-            <div>
+            <div className="grow relative">
                 {React.isValidElement(body) ? body : <Text compact>{body}</Text>}
             </div>
             {footer && footer}

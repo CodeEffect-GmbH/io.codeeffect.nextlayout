@@ -8,33 +8,39 @@ import { ClassNameProps } from "../components.model";
 export interface PricingCardProps extends ClassNameProps {
     headerClassName?: string;
     bodyClassName?: string;
+    footerClassName?: string;
     tierName: string;
     tierPrice: string;
     buttonText: string;
     buttonHref: string;
     buttonClassName?: string;
-    features: string[];
-    featureIcon?: ReactElement;
+    features: TierFeature[];
+}
+
+export interface TierFeature {
+    icon: ReactElement;
+    text: string;
+    textClassName?: string;
 }
 
 const PricingCard: FunctionComponent<PricingCardProps> = ({
     className,
     headerClassName,
     bodyClassName,
+    footerClassName,
     tierName,
     tierPrice,
     buttonText,
     buttonHref,
     buttonClassName,
-    features,
-    featureIcon
+    features
 }) => {
     return (
         <BaseCard className={className} title={
-            <div className={`p-4 md:p-8 flex justify-center items-center h-20 ${headerClassName}`}>
+            <div className={`p-4 md:p-8 flex justify-center items-center ${headerClassName}`}>
                 <div className="text-center">
                     <Text compact>{tierName}</Text>
-                    <Title uppercase compact level={5}>{tierPrice}</Title>
+                    <Title uppercase compact level={4}>{tierPrice}</Title>
                 </div>
             </div>
         }
@@ -43,15 +49,16 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
                     <div className="grid grid-cols-1">
                         {features.map((feature, index) =>
                             <div key={index} className="px-4 md:px-8 py-4 flex items-center gap-4">
-                                {featureIcon && featureIcon}
-                                <Text compact>{feature}</Text>
+                                {feature.icon}
+                                <Text compact className={feature.textClassName}>{feature.text}</Text>
                             </div>
                         )}
                     </div>
-
-                    <div className="flex justify-center items-center p-4 md:p-8">
-                        <LinkButton className={buttonClassName} href={buttonHref} title={buttonText}>{buttonText}</LinkButton>
-                    </div>
+                </div>
+            }
+            footer={
+                <div className={`flex justify-center items-center p-4 md:p-8 ${footerClassName}`}>
+                    <LinkButton className={buttonClassName} href={buttonHref} title={buttonText}>{buttonText}</LinkButton>
                 </div>
             } />
     );
