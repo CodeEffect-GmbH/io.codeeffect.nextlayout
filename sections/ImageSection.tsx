@@ -24,35 +24,31 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     children
 }) => {
     return (
-        <div>
-            <div className="block lg:hidden">
-                <BasicSection title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
-                    <div className="relative w-full h-80">
+        <>
+            <BasicSection className="flex lg:hidden" title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
+                <div className="relative w-full h-80">
+                    <Image src={imageUrl} alt={imageAlt} fill style={{
+                        objectFit: 'cover'
+                    }} unoptimized={imageUnoptimized} />
+                </div>
+                <div className="mt-4 md:mt-8">{children}</div>
+            </BasicSection>
+            <TwoColumnSection className="hidden lg:flex" forceLast={forceLast} reversed={reversed}
+                left={
+                    <div className="relative w-full h-full">
                         <Image src={imageUrl} alt={imageAlt} fill style={{
                             objectFit: 'cover'
                         }} unoptimized={imageUnoptimized} />
                     </div>
-                    <div className="mt-4 md:mt-8">{children}</div>
-                </BasicSection>
-            </div>
-            <div className="hidden lg:block">
-                <TwoColumnSection forceLast={forceLast} reversed={reversed}
-                    left={
-                        <div className="relative w-full h-full">
-                            <Image src={imageUrl} alt={imageAlt} fill style={{
-                                objectFit: 'cover'
-                            }} unoptimized={imageUnoptimized} />
-                        </div>
-                    }
-                    right={
-                        <div>
-                            <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
-                            <div>{children}</div>
-                        </div>
-                    }>
-                </TwoColumnSection>
-            </div>
-        </div>
+                }
+                right={
+                    <div>
+                        <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
+                        <div>{children}</div>
+                    </div>
+                }>
+            </TwoColumnSection>
+        </>
     );
 }
 

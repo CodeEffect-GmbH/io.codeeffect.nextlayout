@@ -12,11 +12,12 @@ export interface TwoColumnSection extends MinimalSectionProps {
 const TwoColumnSection: FunctionComponent<PropsWithChildren<TwoColumnSection>> = ({
     left,
     right,
+    className,
     forceLast = false,
     reversed = false,
 }) => {
     return (
-        <Section forceLast={forceLast}>
+        <Section className={className} forceLast={forceLast}>
             <MaxWidthContainer>
                 {reversed &&
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8'>
