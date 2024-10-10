@@ -2,8 +2,10 @@ import { FunctionComponent, ReactElement } from "react";
 import Title from "../typography/title";
 import LinkButton from "../link-button";
 import Text from "../typography/text";
+import BaseCard from "./BaseCard";
+import { ClassNameProps } from "../components.model";
 
-export interface PricingCardProps {
+export interface PricingCardProps extends ClassNameProps {
     headerClassName?: string;
     bodyClassName?: string;
     tierName: string;
@@ -16,6 +18,7 @@ export interface PricingCardProps {
 }
 
 const PricingCard: FunctionComponent<PricingCardProps> = ({
+    className,
     headerClassName,
     bodyClassName,
     tierName,
@@ -27,28 +30,30 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
     featureIcon
 }) => {
     return (
-        <div className="flex flex-col">
-            <div className={`p-4 md:p-8 bg-gray-100 flex justify-center items-center h-20 ${headerClassName}`}>
+        <BaseCard className={className} title={
+            <div className={`p-4 md:p-8 flex justify-center items-center h-20 ${headerClassName}`}>
                 <div className="text-center">
-                    <Title uppercase compact level={5}>{tierName}</Title>
-                    <Text compact>{tierPrice}</Text>
+                    <Text compact>{tierName}</Text>
+                    <Title uppercase compact level={5}>{tierPrice}</Title>
                 </div>
             </div>
-            <div className={bodyClassName ? bodyClassName : 'border-2 border-solid border-gray-100'}>
-                <div className="grid grid-cols-1 divide-y-2 divide-gray-100">
-                    {features.map((feature, index) =>
-                        <div key={index} className="px-4 md:px-8 py-4 flex items-center gap-4">
-                            {featureIcon && featureIcon}
-                            <Text compact>{feature}</Text>
-                        </div>
-                    )}
-                </div>
+        }
+            body={
+                <div className={bodyClassName}>
+                    <div className="grid grid-cols-1">
+                        {features.map((feature, index) =>
+                            <div key={index} className="px-4 md:px-8 py-4 flex items-center gap-4">
+                                {featureIcon && featureIcon}
+                                <Text compact>{feature}</Text>
+                            </div>
+                        )}
+                    </div>
 
-                <div className="flex justify-center items-center px-4 md:px-8 py-4">
-                    <LinkButton className={buttonClassName} href={buttonHref} title={buttonText}>{buttonText}</LinkButton>
+                    <div className="flex justify-center items-center p-4 md:p-8">
+                        <LinkButton className={buttonClassName} href={buttonHref} title={buttonText}>{buttonText}</LinkButton>
+                    </div>
                 </div>
-            </div>
-        </div>
+            } />
     );
 }
 
