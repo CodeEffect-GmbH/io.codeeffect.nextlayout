@@ -1,5 +1,4 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
-import Text from "./typography/text";
 import Title from "./typography/title";
 
 export interface BulletListItemProps {
@@ -20,7 +19,7 @@ const BulletListItem: FunctionComponent<PropsWithChildren<BulletListItemProps>> 
                 </div>}
             <div className="md:text-justify">
                 {title && <Title level={5} compact>{title}</Title>}
-                <Text compact>{children}</Text>
+                {children}
             </div>
         </div>
     );
