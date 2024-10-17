@@ -15,10 +15,10 @@ const BasicSection: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     anchorId
 }) => {
     return (
-        <Section className={className} forceLast={forceLast}>
+        <Section className={className} anchorId={anchorId} forceLast={forceLast}>
             <MaxWidthContainer>
                 <div className='flex flex-col'>
-                    <SectionHeader anchorId={anchorId} align={align} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
+                    <SectionHeader align={align} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} />
                     <div>{children}</div>
                 </div>
             </MaxWidthContainer>

@@ -8,7 +8,6 @@ export interface SectionHeaderProps extends ClassNameProps {
     subtitle: string | ReactElement;
     align?: SectionHeaderAlignment;
     overTitleIcon?: ReactElement;
-    anchorId?: string;
 }
 
 export type SectionHeaderAlignment = 'left' | 'center' | 'right';
@@ -18,15 +17,13 @@ const SectionHeader: FunctionComponent<SectionHeaderProps> = ({
     title,
     subtitle,
     align = 'left',
-    overTitleIcon,
-    anchorId
+    overTitleIcon
 }) => {
     const alignClass = align === 'left' ? 'text-left' : (align === 'center' ? 'text-center' : 'text-right');
     const alignClassFlex = align === 'left' ? 'justify-start' : (align === 'center' ? 'justify-center' : 'justify-end');
 
     return (
         <div className={className}>
-            {anchorId && <a id={anchorId} />}
             <div className={`flex mb-2 md:mb-4 ${alignClassFlex}`}>
                 {overTitleIcon && <div className="mr-2">{overTitleIcon}</div>}
                 {React.isValidElement(subtitle) ? subtitle : <Title className="text-pretty" level={5} uppercase compact>{subtitle}</Title>}

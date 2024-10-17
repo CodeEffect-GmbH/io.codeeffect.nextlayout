@@ -17,7 +17,6 @@ const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCard
     subtitle,
     overTitleIcon,
     align,
-    anchorId,
     className,
     children
 }) => {
@@ -26,7 +25,7 @@ const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCard
             <div className={`hidden bg-white lg:flex flex-col overflow-hidden p-4 md:p-8 h-[28rem] ${className}`}>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full'>
                     <div className="flex flex-col justify-between">
-                        <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} anchorId={anchorId} />
+                        <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} />
                         <div className="h-full">
                             {children}
                         </div>
@@ -40,7 +39,7 @@ const ExplainerVideoCard: FunctionComponent<PropsWithChildren<ExplainerVideoCard
                 </div>
             </div>
             <div className={`flex flex-col lg:hidden ${className}`}>
-                <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} anchorId={anchorId} />
+                <SectionHeader title={title} subtitle={subtitle} overTitleIcon={overTitleIcon} align={align} />
                 <div className="relative h-[14rem]">
                     <video className={`absolute h-full w-full left-0 top-0 object-cover ${videoPlayerClassName}`} controls
                         poster={videoPosterSrc}>
