@@ -17,12 +17,14 @@ const BaseCard: FunctionComponent<BaseCardProps> = ({
     className
 }) => {
     return (
-        <div className={`bg-white flex flex-col overflow-hidden ${className}`}>
+        <div className={`bg-white relative flex flex-col overflow-hidden ${className}`}>
             {React.isValidElement(title) ? title : <Title compact className="p-4 md:p-8" level={5}>{title}</Title>}
-            <div className="grow relative">
+            <div className="grow shrink relative">
                 {React.isValidElement(body) ? body : <Text compact>{body}</Text>}
             </div>
-            {footer && footer}
+            <div className="relative grow-0 shrink-0">
+                {footer && footer}
+            </div>
         </div>
     );
 }

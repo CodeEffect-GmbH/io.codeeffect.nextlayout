@@ -1,6 +1,5 @@
 import { FunctionComponent, ReactElement } from "react";
 import Title from "../typography/title";
-import LinkButton from "../link-button";
 import Text from "../typography/text";
 import BaseCard from "./BaseCard";
 import { ClassNameProps } from "../components.model";
@@ -11,9 +10,7 @@ export interface PricingCardProps extends ClassNameProps {
     footerClassName?: string;
     tierName: string;
     tierPrice: string;
-    buttonText: string;
-    buttonHref: string;
-    buttonClassName?: string;
+    action: ReactElement;
     features: TierFeature[];
 }
 
@@ -30,9 +27,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
     footerClassName,
     tierName,
     tierPrice,
-    buttonText,
-    buttonHref,
-    buttonClassName,
+    action,
     features
 }) => {
     return (
@@ -58,7 +53,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
             }
             footer={
                 <div className={`flex justify-center items-center p-4 md:p-8 ${footerClassName}`}>
-                    <LinkButton className={buttonClassName} href={buttonHref} title={buttonText}>{buttonText}</LinkButton>
+                    {action}
                 </div>
             } />
     );
