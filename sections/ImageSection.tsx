@@ -8,6 +8,7 @@ import BasicSection from "./basic-section";
 export interface ImageSectionProps extends SectionProps {
     imageUrl: string;
     imageAlt: string;
+    imageContainerClassName?: string;
     imageUnoptimized?: boolean;
     reversed?: boolean;
 }
@@ -15,6 +16,7 @@ export interface ImageSectionProps extends SectionProps {
 const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     imageUrl,
     imageAlt,
+    imageContainerClassName,
     imageUnoptimized = false,
     title,
     subtitle,
@@ -26,7 +28,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
     return (
         <>
             <BasicSection className="flex lg:hidden" forceLast={forceLast} title={title} subtitle={subtitle} overTitleIcon={overTitleIcon}>
-                <div className="relative w-full h-80">
+                <div className={`relative w-full h-80 ${imageContainerClassName}`}>
                     <Image src={imageUrl} alt={imageAlt} fill style={{
                         objectFit: 'cover'
                     }} unoptimized={imageUnoptimized} />
@@ -35,7 +37,7 @@ const ImageSection: FunctionComponent<PropsWithChildren<ImageSectionProps>> = ({
             </BasicSection>
             <TwoColumnSection className="hidden lg:flex" forceLast={forceLast} reversed={reversed}
                 left={
-                    <div className="relative w-full h-full">
+                    <div className={`relative w-full h-full ${imageContainerClassName}`}>
                         <Image src={imageUrl} alt={imageAlt} fill style={{
                             objectFit: 'cover'
                         }} unoptimized={imageUnoptimized} />
