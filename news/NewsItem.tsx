@@ -29,6 +29,14 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
         setHover(false);
     };
 
+    const getWords = (input: string, wordCount: number): string => {
+        // Split the string by spaces to get an array of words.
+        const words = input.split(/\s+/);
+
+        // Take only the specified number of words and join them back into a string.
+        return words.slice(0, wordCount).join(" ");
+    }
+
     const options: Intl.DateTimeFormatOptions = {
         weekday: 'long',
         year: 'numeric',
@@ -38,6 +46,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
 
     const dateTimeFormatter = new Intl.DateTimeFormat(locale, options);
     const formattedDate = dateTimeFormatter.format(Date.parse(info.date));
+    const abstract = getWords(info.abstract, 25).concat('...');
 
     return (
         <div className={className} onMouseEnter={showHover} onMouseLeave={hideHover}>
@@ -56,7 +65,7 @@ const NewsItem: FunctionComponent<NewsItemProps> = ({
                             <Image src={info.authorImageSrc} alt={info.authorName} fill unoptimized />
                         </div>
                     </div>
-                    <Text compact className="mb-4">{info.abstract}</Text>
+                    <Text compact className="mb-4">{abstract}</Text>
                     <div className="mb-4 flex gap-4">
                         {info.tags.map((tag, index) => <NewsItemTag className={tagsClassName} key={index}>{tag}</NewsItemTag>)}
                     </div>
