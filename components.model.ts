@@ -11,6 +11,7 @@ export interface ImageAltProps {
 export interface MinimalSectionProps extends ClassNameProps {
     forceLast?: boolean;
     anchorId?: string;
+    compact?: boolean;
 }
 
 export interface SectionProps extends MinimalSectionProps, SectionHeaderProps { }
