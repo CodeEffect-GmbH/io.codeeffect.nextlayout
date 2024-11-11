@@ -2,9 +2,9 @@ export interface ProjectsItemInfo {
     title: string;
     abstract: string;
     imageSrc: string;
-    date: string;
-    authorName: string;
-    authorImageSrc: string;
+    companyName: string;
+    companyIndustry: string;
+    companyLogoSrc: string;
     relativePath: string;
     tags: string[];
 }
