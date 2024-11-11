@@ -9,13 +9,11 @@ import ProjectsItemTag from "./ProjectsItemTag";
 
 export interface ProjectItemProps extends ClassNameProps {
     info: ProjectsItemInfo;
-    locale: string;
     tagsClassName?: string;
 }
 
 const ProjectItem: FunctionComponent<ProjectItemProps> = ({
     info,
-    locale,
     tagsClassName,
     className
 }) => {
@@ -37,15 +35,6 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
         return words.slice(0, wordCount).join(" ");
     }
 
-    const options: Intl.DateTimeFormatOptions = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
-
-    const dateTimeFormatter = new Intl.DateTimeFormat(locale, options);
-    const formattedDate = dateTimeFormatter.format(Date.parse(info.date));
     const abstract = getWords(info.abstract, 25).concat('...');
 
     return (
@@ -58,11 +47,10 @@ const ProjectItem: FunctionComponent<ProjectItemProps> = ({
                 <div>
                     <div className="mb-4 flex justify-between items-center">
                         <div className="mr-8">
-                            <Text className="mb-2 text-ce-text-secondary" level={2} compact>{formattedDate}</Text>
                             <Title className={hover ? 'text-ce-complementary' : ''} level={5} compact>{info.title}</Title>
                         </div>
                         <div className="relative shrink-0 h-14 w-14 rounded-full overflow-hidden">
-                            <Image src={info.authorImageSrc} alt={info.authorName} fill unoptimized />
+                            <Image src={info.companyLogoSrc} alt={info.companyName} fill unoptimized />
                         </div>
                     </div>
                     <Text compact className="mb-4">{abstract}</Text>
