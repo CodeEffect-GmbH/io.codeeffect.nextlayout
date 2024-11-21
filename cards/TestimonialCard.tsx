@@ -20,7 +20,7 @@ const TestimonialCard: FunctionComponent<TestimonialCardProps> = ({
     showStars = false
 }) => {
     return (
-        <div className="relative bg-white rounded-lg p-4 md:p-8 flex flex-col gap-4">
+        <div className="h-full relative bg-white rounded-lg p-4 md:p-8 flex flex-col gap-4">
             {imageSrc &&
                 <div className="relative">
                     <Image className="rounded-full" src={imageSrc} alt={name} width={64} height={64} />
