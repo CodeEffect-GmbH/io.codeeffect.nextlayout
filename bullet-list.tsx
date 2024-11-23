@@ -1,10 +1,12 @@
 import { FunctionComponent, PropsWithChildren } from "react";
+import { ClassNameProps } from "./components.model";
 
-const BulletList: FunctionComponent<PropsWithChildren> = ({
+const BulletList: FunctionComponent<PropsWithChildren<ClassNameProps>> = ({
+    className,
     children
 }) => {
     return (
-        <div className='flex flex-col gap-8'>
+        <div className={`flex flex-col ${className}`}>
             {children}
         </div>
     );
