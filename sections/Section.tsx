@@ -9,7 +9,7 @@ const Section: FunctionComponent<PropsWithChildren<MinimalSectionProps>> = ({
     compact
 }) => {
     return (
-        <div className={`relative flex justify-center px-4 md:px-8 ${compact ? `pt-16 lg:pt-32 ${forceLast ? 'pb-16 lg:pb-32' : 'last:pb-16 lg:last:pb-32'}` : `pt-24 lg:pt-44 ${forceLast ? 'pb-24 lg:pb-44' : 'last:pb-24 lg:last:pb-44'}`} ${className ? className : ''}`}>
+        <div className={`relative flex justify-center px-4 md:px-8 ${compact ? `pt-16 lg:pt-24 ${forceLast ? 'pb-16 lg:pb-24' : 'last:pb-16 lg:last:pb-24'}` : `pt-24 lg:pt-28 ${forceLast ? 'pb-24 lg:pb-28' : 'last:pb-24 lg:last:pb-28'}`} ${className ? className : ''}`}>
             {anchorId && <a className="absolute top-24" id={anchorId} />}
             {children}
         </div>
