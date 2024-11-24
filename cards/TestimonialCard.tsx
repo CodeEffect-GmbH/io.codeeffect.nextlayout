@@ -3,8 +3,9 @@ import React from "react";
 import Title from "../typography/title";
 import Text from "../typography/text";
 import Image from "next/image";
+import { ClassNameProps } from "../components.model";
 
-export interface TestimonialCardProps {
+export interface TestimonialCardProps extends ClassNameProps {
     imageSrc?: string;
     name: string;
     position: string;
@@ -17,10 +18,11 @@ const TestimonialCard: FunctionComponent<TestimonialCardProps> = ({
     name,
     position,
     text,
-    showStars = false
+    showStars = false,
+    className
 }) => {
     return (
-        <div className="h-full relative bg-white rounded-lg p-4 md:p-8 flex flex-col gap-4">
+        <div className={`h-full relative p-4 md:p-8 flex flex-col gap-4 ${className}`}>
             {imageSrc &&
                 <div className="relative">
                     <Image className="rounded-full" src={imageSrc} alt={name} width={64} height={64} />
