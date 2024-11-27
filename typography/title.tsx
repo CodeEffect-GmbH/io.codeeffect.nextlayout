@@ -13,7 +13,7 @@ const Title: FunctionComponent<React.PropsWithChildren<HeadingTitleProps>> = ({
     children
 }) => {
     return (
-        <div className={`${uppercase ? 'uppercase' : 'normal-case'} ${compact ? 'mb-0' : 'mb-6 md:mb-8'} ${className}`}>
+        <div className={`${uppercase ? 'uppercase' : 'normal-case'} ${compact ? 'mb-0' : 'mb-4 md:mb-8'} ${className}`}>
             {level === 1 && <h1 className="line-styled-heading text-4xl md:text-5xl lg:text-6xl font-bold">{children}</h1>}
             {level === 2 && <h2 className="line-styled-heading text-3xl md:text-4xl lg:text-5xl font-bold">{children}</h2>}
             {level === 3 && <h3 className="line-styled-heading text-2xl md:text-3xl lg:text-4xl font-bold">{children}</h3>}
