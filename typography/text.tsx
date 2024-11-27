@@ -8,7 +8,7 @@ const Text: FunctionComponent<React.PropsWithChildren<TextProps>> = ({
     children
 }) => {
     return (
-        <div className={`inline-block ${compact ? 'mb-0' : 'mb-8 md:mb-12 last:mb-0 last:md:mb-0'}`}>
+        <div className={`inline-block ${compact ? 'mb-0' : 'mb-4 md:mb-8 last:mb-0 last:md:mb-0'}`}>
             {level === 1 &&
                 <div className={`block line-styled-heading text-lg ${className}`}>
                     {children}
