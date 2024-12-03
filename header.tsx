@@ -3,14 +3,12 @@ import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { ClassNameProps } from "./components.model";
 
 export interface HeaderProps extends ClassNameProps {
-    shadow?: boolean;
     logo: ReactNode;
     logoLink: string;
     logoLinkTitle: string;
 }
 
 const Header: FunctionComponent<PropsWithChildren<HeaderProps>> = ({
-    shadow: dropShadow = true,
     logo,
     logoLink,
     logoLinkTitle,
@@ -18,7 +16,7 @@ const Header: FunctionComponent<PropsWithChildren<HeaderProps>> = ({
     children
 }) => {
     return (
-        <header className={`flex justify-between ${dropShadow ? 'shadow-md' : ''} ${className}`}>
+        <header className={`flex justify-between ${className}`}>
             <div className="px-4 md:px-8 flex items-center">
                 <Link href={logoLink} title={logoLinkTitle}>{logo}</Link>
             </div>
