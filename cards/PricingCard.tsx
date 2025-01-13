@@ -10,6 +10,7 @@ export interface PricingCardProps extends ClassNameProps {
     footerClassName?: string;
     tierName: string;
     tierPrice: string;
+    tierPriceNote?: string;
     action: ReactElement;
     features: TierFeature[];
 }
@@ -27,6 +28,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
     footerClassName,
     tierName,
     tierPrice,
+    tierPriceNote,
     action,
     features
 }) => {
@@ -34,8 +36,11 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
         <BaseCard className={className} title={
             <div className={`p-4 md:p-8 flex justify-center items-center ${headerClassName}`}>
                 <div className="text-center">
-                    <Text compact>{tierName}</Text>
-                    <Title uppercase compact level={4}>{tierPrice}</Title>
+                    <Title level={5}>{tierName}</Title>
+                    <div>
+                        <Title uppercase level={4}>{tierPrice}</Title>
+                        {tierPriceNote && <Text className="text-slate-100" level={2}>{tierPriceNote}</Text>}
+                    </div>
                 </div>
             </div>
         }
