@@ -39,7 +39,7 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
                     <Title level={5}>{tierName}</Title>
                     <div>
                         <Title uppercase level={4}>{tierPrice}</Title>
-                        {tierPriceNote && <Text className="text-slate-100" level={2}>{tierPriceNote}</Text>}
+                        {tierPriceNote && <Text level={2}>{tierPriceNote}</Text>}
                     </div>
                 </div>
             </div>
