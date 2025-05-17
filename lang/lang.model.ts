@@ -4,4 +4,4 @@ export interface LangProps {
   };
 }
 
-export type LangPropsParams = Promise<LangProps>;
+export type LangPropsParams = Promise<{ lang: string }>;
