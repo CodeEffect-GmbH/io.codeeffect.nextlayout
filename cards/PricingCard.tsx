@@ -12,6 +12,7 @@ export interface PricingCardProps extends ClassNameProps {
   tierPrice: string;
   tierPriceNote?: string;
   action: ReactElement;
+  featuresTitle?: string;
   features: TierFeature[];
 }
 
@@ -30,30 +31,41 @@ const PricingCard: FunctionComponent<PricingCardProps> = ({
   tierPrice,
   tierPriceNote,
   action,
+  featuresTitle,
   features,
 }) => {
   return (
     <BaseCard
       className={className}
       title={
-        <div
-          className={`p-4 md:p-8 flex justify-center items-center ${headerClassName}`}>
-          <div className="text-center">
-            <Title level={5}>{tierName}</Title>
-            <div>
-              <Title
-                uppercase
-                level={4}>
-                {tierPrice}
-              </Title>
-              {tierPriceNote && <Text level={2}>{tierPriceNote}</Text>}
-            </div>
+        <div className={`p-4 md:p-8 flex flex-col gap-2 ${headerClassName}`}>
+          <Title
+            level={5}
+            compact>
+            {tierName}
+          </Title>
+          <div className="flex gap-4">
+            <Title
+              uppercase
+              level={3}>
+              {tierPrice}
+            </Title>
+            {tierPriceNote && (
+              <div className="max-w-32">
+                <Text level={2}>{tierPriceNote}</Text>
+              </div>
+            )}
           </div>
         </div>
       }
       body={
         <div className={bodyClassName}>
-          <div className="grid grid-cols-1 py-4">
+          {featuresTitle && (
+            <div className="px-4 md:px-8 font-bold pt-4">
+              <Text level={2}>{featuresTitle}</Text>
+            </div>
+          )}
+          <div className="grid grid-cols-1 pt-2">
             {features.map((feature, index) => (
               <div
                 key={index}
