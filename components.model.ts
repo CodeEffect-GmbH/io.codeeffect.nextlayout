@@ -1,21 +1,21 @@
-import { SectionHeaderProps } from "./sections/section-header";
+import { SectionHeaderProps } from './sections/section-header';
 
 export interface ClassNameProps {
-    className?: string;
+  className?: string;
 }
 
 export interface ImageAltProps {
-    alt: string;
+  alt: string;
 }
 
 export interface MinimalSectionProps extends ClassNameProps {
-    forceLast?: boolean;
-    anchorId?: string;
-    compact?: boolean;
+  forceLast?: boolean;
+  anchorId?: string;
+  compact?: boolean;
 }
 
-export interface SectionProps extends MinimalSectionProps, SectionHeaderProps { }
+export interface SectionProps extends MinimalSectionProps, SectionHeaderProps {}
 
 export interface SourceProps {
-    src: string;
+  src: string;
 }
